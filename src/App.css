@@ -1,139 +1,153 @@
-
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: rgb(255, 214, 233);
+	font-family: Arial, sans-serif;
+	background-color: rgb(255, 214, 233);
 }
 
 .app {
-  min-height: 100vh;
-  background-color: rgb(240, 73, 151);
-  color: white;
+	min-height: 100vh;
+	background-color: rgb(240, 73, 151);
+	color: white;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center all content horizontally */
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* center all content horizontally */
 }
 
 /* constrain content width and center it */
 .app > * {
-  width: 100%;
-  max-width: 900px;
+	width: 100%;
+	max-width: 900px;
 }
 
+
 .header {
-  text-align: center;
-  padding-top: 8px;
-  padding-bottom: 20px;
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4);
-  background-color: rgb(216, 27, 115);
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 20px;
+	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4);
+	background-color: rgb(216, 27, 115);
 }
 
 .header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+	margin: 0;
+	font-size: 2.5rem;
 }
 
 .header p {
-  margin-top: 8px;
-  font-size: 1.1rem;
+	margin-top: 8px;
+	font-size: 1.1rem;
+  color: rgb(226, 197, 215);
 }
 
 .shopContainer {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column; 
+  align-items: flex-end;  
+  gap: 12px;
   padding: 16px 24px 0;
 }
 
 .shopButton {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: none;
-  border-radius: 16px;
-  background-color: rgb(247, 124, 191);
-  padding: 12px 16px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	border: none;
+	border-radius: 16px;
+	background-color: rgb(247, 124, 191);
+	padding: 12px 16px;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
 }
 
 .shopButton:hover:not(:disabled) {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .shopButton:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.cartImg {
+  width: 90px;
+  margin-top: 12px;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
+}
+
+.cartButton {
+  background-color: rgb(247, 124, 191);
 }
 
 .moneyCount {
-  font-size: 2rem;
-  font-weight: bold;
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 .moneyIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  border-radius: 9999px;
- 
-  font-size: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70px;
+	height: 70px;
+	border-radius: 9999px;
+	font-size: 2rem;
 }
 
 .counterContainer {
-  text-align: center;
-  padding-top: 50px;
+	text-align: center;
+	padding-top: 50px;
 }
 
 .counterContainer h2 {
-  margin: 0;
-  font-size: 2rem;
+	margin: 0;
+	font-size: 2rem;
 }
 
 .muffinContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  padding: 0 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	padding: 0 16px;
 }
 
 .muffinButton {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.15s ease;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: transform 0.15s ease;
 }
 
 .muffinButton:hover {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .muffinButton:active {
-  transform: scale(0.95);
+	transform: scale(0.95);
 }
 
 .muffinIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  max-width: 100%;
-  border-radius: 9999px;
-  background-color: rgb(255, 214, 233);
-  font-size: 7.5rem;
-  box-shadow: 10px 10px 20px rgba(255, 244, 244, 0.555);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	max-width: 100%;
+	border-radius: 9999px;
+	background-color: rgb(255, 214, 233);
+	font-size: 7.5rem;
+	box-shadow: 10px 10px 20px rgba(255, 244, 244, 0.555);
 }
 
-.muffinImg  {
-  height: 300px;
+.muffinImg {
+	height: 300px;
+  filter: drop-shadow(10px 10px 20px rgba(255, 244, 244, 0));
 }
 
 .coinImg {
-  height: 100px;
+	height: 100px;
 }
