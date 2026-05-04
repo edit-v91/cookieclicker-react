@@ -278,6 +278,7 @@ body {
 }
 
 .shopPanel {
+	margin-top: -105px;
 	width: 100%;
 	max-width: 520px;
 	background-color: rgb(247, 124, 191);
