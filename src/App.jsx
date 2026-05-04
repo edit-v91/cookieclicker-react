@@ -12,7 +12,7 @@ function Home({ counter, countClick, multiplier }) {
 	return (
 		<>
 			<CounterDisplay counter={counter} multiplier={multiplier}/>
-			<Muffin onClick={countClick} />
+			<Muffin onClick={countClick} counter={counter}/>
 		</>
 	);
 }
@@ -46,7 +46,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<Header />
+			<Header counter={counter}/>
 			<ShopButton money={money} onBuy={buyMuffin} />
 			<Routes>
 				<Route
