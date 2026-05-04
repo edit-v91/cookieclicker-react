@@ -180,20 +180,32 @@ body {
 	pointer-events: none;
 }
 
-.counterContainer h2 {
+.counterBox {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	padding: 12px 100px;
+	margin: 10px auto;
+	border-radius: 16px;
+	background-color: rgb(247, 124, 191);
+	opacity: 0.6;
+	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
+	width: fit-content;
+}
+
+.counterBox h2,
+.counterBox h3 {
 	margin: 0;
-	font-size: 2rem;
 	color: white;
 	text-shadow:
 		0 2px 4px rgba(0, 0, 0, 0.5),
 		0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.boosterContainer {
-	color: white;
-	text-shadow:
-		0 2px 4px rgba(0, 0, 0, 0.5),
-		0 6px 12px rgba(0, 0, 0, 0.3);
+.counterBox h3 {
+	font-size: 0.95rem;
+	opacity: 0.9;
 }
 
 .muffinContainer {
@@ -202,7 +214,7 @@ body {
 	align-items: center;
 	height: 220px;
 	padding: 0px 16px;
-	margin-top: 100px;
+	margin-top: 60px;
 }
 
 .muffinButton {

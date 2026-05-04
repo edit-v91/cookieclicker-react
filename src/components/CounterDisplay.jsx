@@ -1,10 +1,12 @@
 export default function CounterDisplay({ counter, multiplier }) {
 	return (
 		<div className="container">
-			<div className="boosterContainer">
-				<h3>{multiplier}x booster active</h3>
-			</div>
-			<div className="counterContainer">
+			<div className="counterBox">
+				<h3>
+					{multiplier > 1
+						? `Sugar rush x${multiplier}`
+						: "No booster active"}
+				</h3>
 				<h2>{counter} muffin(s)</h2>
 			</div>
 		</div>
