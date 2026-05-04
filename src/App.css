@@ -23,7 +23,51 @@ body {
 	padding-top: 8px;
 	padding-bottom: 5px;
 	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4);
+	position: relative;
 	background: linear-gradient(180deg, rgb(240, 73, 151), rgb(216, 27, 115));
+	overflow: hidden;
+}
+
+.navMuffin {
+  position: absolute;
+  width: 34px;
+  height: auto;
+  opacity: 0.75;
+  animation: floatMuffin 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.m1 {
+  left: 18%;
+  top: 12px;
+}
+
+.m2 {
+  left: 8%;
+  bottom: 10px;
+  animation-delay: 0.5s;
+}
+
+.m3 {
+  right: 23%;
+  top: 10px;
+  animation-delay: 1s;
+}
+
+.m4 {
+  right: 12%;
+  bottom: 12px;
+  animation-delay: 1.5s;
+}
+
+@keyframes floatMuffin {
+  0%, 100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(6deg);
+  }
 }
 
 .header h1 {

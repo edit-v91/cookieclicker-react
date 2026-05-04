@@ -3,6 +3,7 @@ import "./App.css";
 import Muffin from "./components/Muffin";
 import ShopButton from "./components/ShopButton";
 import CounterDisplay from "./components/CounterDisplay";
+import Header from "./components/Header";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -25,10 +26,7 @@ function App() {
 
 	return (
 		<>
-			<header className="header">
-				<h1>Welcome to the Muffin clicker</h1>
-				<p>Have fun!</p>
-			</header>
+			<Header className="header" />
       <ShopButton money={money} onBuy={buyMuffin} />
       <CounterDisplay counter={counter} />
       <Muffin onClick={countClick} />
