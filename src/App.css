@@ -158,18 +158,18 @@ body {
 }
 
 .backButton {
-  margin-top: 16px;
-  border: none;
-  border-radius: 16px;
-  background-color: rgb(255, 160, 200);
-  padding: 10px 16px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 8px 12px -6px rgba(0, 0, 0, 0.35);
+	margin-top: 16px;
+	border: none;
+	border-radius: 16px;
+	background-color: rgb(255, 160, 200);
+	padding: 10px 16px;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0 8px 12px -6px rgba(0, 0, 0, 0.35);
 }
 
 .backButton:hover {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .moneyCount {
@@ -333,3 +333,5 @@ body {
 	height: 50px;
 	object-fit: contain;
 }
+
+
