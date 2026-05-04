@@ -10,41 +10,47 @@ body {
 
 	display: flex;
 	flex-direction: column;
-	align-items: center; /* center all content horizontally */
+	align-items: center;
 }
 
-/* constrain content width and center it */
 .app > * {
 	width: 100%;
 	max-width: 900px;
 }
 
-
 .header {
 	text-align: center;
 	padding-top: 8px;
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4);
-	background-color: rgb(216, 27, 115);
+	background: linear-gradient(180deg, rgb(240, 73, 151), rgb(216, 27, 115));
 }
 
 .header h1 {
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: 2.3rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: none;
+	color: white;
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.2),
+		0 0 10px rgba(255, 182, 193, 0.5);
 }
 
 .header p {
-	margin-top: 8px;
+	margin-top: 10px;
 	font-size: 1.1rem;
-  color: rgb(226, 197, 215);
+	color: rgba(255, 255, 255, 0.85);
+	font-style: italic;
 }
 
 .shopContainer {
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-end;  
-  gap: 12px;
-  padding: 16px 24px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
+	padding: 16px 24px 0;
 }
 
 .shopButton {
@@ -73,13 +79,13 @@ body {
 }
 
 .cartImg {
-  width: 90px;
-  margin-top: 12px;
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
+	width: 90px;
+	margin-top: 12px;
+	filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
 }
 
 .cartButton {
-  background-color: rgb(247, 124, 191);
+	background-color: rgb(247, 124, 191);
 }
 
 .moneyCount {
@@ -99,20 +105,25 @@ body {
 
 .counterContainer {
 	text-align: center;
-	padding-top: 50px;
+	padding-top: 0px;
 }
 
 .counterContainer h2 {
 	margin: 0;
 	font-size: 2rem;
+	color: white;
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.5),
+		0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .muffinContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 300px;
-	padding: 0 16px;
+	height: 220px;
+	padding: 0px 16px;
+	margin-top: 50px;
 }
 
 .muffinButton {
@@ -145,7 +156,7 @@ body {
 
 .muffinImg {
 	height: 300px;
-  filter: drop-shadow(10px 10px 20px rgba(255, 244, 244, 0));
+	filter: drop-shadow(10px 10px 20px rgba(255, 244, 244, 0));
 }
 
 .coinImg {
