@@ -29,45 +29,51 @@ body {
 }
 
 .navMuffin {
-  position: absolute;
-  width: 34px;
-  height: auto;
-  opacity: 0.75;
-  animation: floatMuffin 3s ease-in-out infinite;
-  pointer-events: none;
+	position: absolute;
+	width: 34px;
+	height: auto;
+	opacity: 0.75;
+	animation: floatMuffin 3s ease-in-out infinite;
+	pointer-events: none;
 }
 
 .m1 {
-  left: 18%;
-  top: 12px;
+	left: 20%;
+	top: 12px;
 }
 
 .m2 {
-  left: 8%;
-  bottom: 10px;
-  animation-delay: 0.5s;
+	left: 8%;
+	bottom: 10px;
+	animation-delay: 0.5s;
 }
 
 .m3 {
-  right: 23%;
-  top: 10px;
-  animation-delay: 1s;
+	right: 23%;
+	top: 10px;
+	animation-delay: 1s;
 }
 
 .m4 {
-  right: 12%;
-  bottom: 12px;
-  animation-delay: 1.5s;
+	right: 12%;
+	bottom: 12px;
+	animation-delay: 1.5s;
 }
 
 @keyframes floatMuffin {
-  0%, 100% {
-    transform: translateY(0) rotate(-6deg);
-  }
+	0%,
+	100% {
+		transform: translateY(0) rotate(-6deg);
+	}
 
-  50% {
-    transform: translateY(-6px) rotate(6deg);
-  }
+	50% {
+		transform: translateY(-6px) rotate(6deg);
+	}
+}
+
+.headerLink {
+	text-decoration: none;
+	color: inherit;
 }
 
 .header h1 {
