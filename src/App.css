@@ -189,6 +189,13 @@ body {
 		0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.boosterContainer {
+	color: white;
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.5),
+		0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .muffinContainer {
 	display: flex;
 	justify-content: center;

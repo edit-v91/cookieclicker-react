@@ -51,7 +51,7 @@ function App() {
 			<Routes>
 				<Route
 					path="/"
-					element={<Home counter={counter} countClick={countClick} />}
+					element={<Home counter={counter} countClick={countClick} multiplier={multiplier}/>}
 				/>
 				<Route
 					path="/shop"
