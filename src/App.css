@@ -1,33 +1,60 @@
+.themeMuffin {
+	--app-bg: rgb(255, 214, 233);
+	--header-bg-start: rgb(240, 73, 151);
+	--header-bg-end: rgb(216, 27, 115);
+	--panel-bg: rgb(247, 124, 191);
+	--button-bg: rgb(255, 160, 200);
+	--accent-bg: rgb(255, 214, 233);
+	--text-glow: rgba(255, 182, 193, 0.5);
+}
+.themeDonut {
+	--app-bg: rgba(255, 210, 170, 0.801);
+	--header-bg-start: rgb(220, 150, 95);
+	--header-bg-end: rgb(145, 75, 42);
+	--panel-bg: rgb(205, 125, 80);
+	--button-bg: rgb(225, 155, 100);
+	--accent-bg: rgb(255, 210, 170);
+	--text-glow: rgba(255, 220, 180, 0.55);
+}
+.themeUpgradedMuffin {
+	--app-bg: rgba(125, 244, 250, 0.596);
+	--header-bg-start: rgb(74, 220, 228);
+	--header-bg-end: rgb(0, 131, 143);
+	--panel-bg: rgb(55, 200, 208);
+	--button-bg: rgb(78, 228, 236);
+	--accent-bg: rgb(125, 244, 250);
+	--text-glow: rgba(120, 255, 255, 0.55);
+}
 body {
 	font-family: Arial, sans-serif;
-	background-color: rgb(255, 214, 233);
+	background-color: var(--app-bg);
 }
-
 .app {
 	min-height: 100vh;
-	background-color: rgb(240, 73, 151);
+	background-color: var(--app-bg);
 	color: white;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
-.app > * {
+.app > *:not(.header) {
 	width: 100%;
-	max-width: 900px;
+	max-width: 95%;
 }
-
 .header {
 	text-align: center;
+	width: 100%;
 	padding-top: 8px;
 	padding-bottom: 5px;
 	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4);
 	position: relative;
-	background: linear-gradient(180deg, rgb(240, 73, 151), rgb(216, 27, 115));
+	background: linear-gradient(
+		180deg,
+		var(--header-bg-start),
+		var(--header-bg-end)
+	);
 	overflow: hidden;
 }
-
 .navMuffin {
 	position: absolute;
 	width: 34px;
@@ -36,63 +63,52 @@ body {
 	animation: floatMuffin 3s ease-in-out infinite;
 	pointer-events: none;
 }
-
 .m1 {
 	left: 20%;
 	top: 12px;
 }
-
 .m2 {
 	left: 8%;
 	bottom: 10px;
 	animation-delay: 0.5s;
 }
-
 .m3 {
 	right: 23%;
 	top: 10px;
 	animation-delay: 1s;
 }
-
 .m4 {
 	right: 12%;
 	bottom: 12px;
 	animation-delay: 1.5s;
 }
-
 @keyframes floatMuffin {
 	0%,
 	100% {
 		transform: translateY(0) rotate(-6deg);
 	}
-
 	50% {
 		transform: translateY(-6px) rotate(6deg);
 	}
 }
-
 .headerLink {
 	text-decoration: none;
 	color: inherit;
 }
-
 .headerLink h1 {
 	transition:
 		transform 0.2s ease,
 		text-shadow 0.2s ease;
 }
-
 .headerLink:hover h1 {
 	transform: scale(1.05);
 	text-shadow:
 		0 4px 8px rgba(0, 0, 0, 0.4),
-		0 0 12px rgba(255, 182, 193, 0.6);
+		0 0 12px var(--text-glow);
 }
-
 .headerLink:active h1 {
 	transform: scale(0.98);
 }
-
 .header h1 {
 	margin: 0;
 	font-size: 2.3rem;
@@ -102,16 +118,14 @@ body {
 	color: white;
 	text-shadow:
 		0 2px 4px rgba(0, 0, 0, 0.2),
-		0 0 10px rgba(255, 182, 193, 0.5);
+		0 0 10px var(--text-glow);
 }
-
 .header p {
 	margin-top: 10px;
 	font-size: 1.1rem;
 	color: rgba(255, 255, 255, 0.85);
 	font-style: italic;
 }
-
 .shopContainer {
 	display: flex;
 	flex-direction: column;
@@ -121,14 +135,13 @@ body {
 	position: relative;
 	z-index: 5;
 }
-
 .shopButton {
 	display: flex;
 	align-items: center;
 	gap: 12px;
 	border: none;
 	border-radius: 16px;
-	background-color: rgb(247, 124, 191);
+	background-color: var(--panel-bg);
 	padding: 12px 16px;
 	color: white;
 	cursor: pointer;
@@ -137,46 +150,38 @@ body {
 		transform 0.2s ease,
 		opacity 0.2s ease;
 }
-
 .shopButton:hover:not(:disabled) {
 	transform: scale(1.05);
 }
-
 .shopButton:disabled {
 	cursor: not-allowed;
 	opacity: 0.6;
 }
-
 .cartImg {
 	width: 90px;
 	margin-top: 12px;
 	filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
 }
-
 .cartButton {
-	background-color: rgb(247, 124, 191);
+	background-color: var(--panel-bg);
 }
-
 .backButton {
 	margin-top: 16px;
 	border: none;
 	border-radius: 16px;
-	background-color: rgb(255, 160, 200);
+	background-color: var(--button-bg);
 	padding: 10px 16px;
 	color: white;
 	cursor: pointer;
 	box-shadow: 0 8px 12px -6px rgba(0, 0, 0, 0.35);
 }
-
 .backButton:hover {
 	transform: scale(1.05);
 }
-
 .moneyCount {
 	font-size: 2rem;
 	font-weight: bold;
 }
-
 .moneyIcon {
 	display: flex;
 	align-items: center;
@@ -186,7 +191,6 @@ body {
 	border-radius: 9999px;
 	font-size: 2rem;
 }
-
 .container {
 	text-align: center;
 	margin-top: -105px;
@@ -194,7 +198,6 @@ body {
 	z-index: 1;
 	pointer-events: none;
 }
-
 .counterBox {
 	display: inline-flex;
 	flex-direction: column;
@@ -203,12 +206,11 @@ body {
 	padding: 12px 100px;
 	margin: 10px auto;
 	border-radius: 16px;
-	background-color: rgb(247, 124, 191);
+	background-color: var(--panel-bg);
 	opacity: 0.6;
 	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
 	width: fit-content;
 }
-
 .counterBox h2,
 .counterBox h3 {
 	margin: 0;
@@ -217,12 +219,10 @@ body {
 		0 2px 4px rgba(0, 0, 0, 0.5),
 		0 6px 12px rgba(0, 0, 0, 0.3);
 }
-
 .counterBox h3 {
 	font-size: 0.95rem;
 	opacity: 0.9;
 }
-
 .muffinContainer {
 	display: flex;
 	justify-content: center;
@@ -231,7 +231,6 @@ body {
 	padding: 0px 16px;
 	margin-top: 60px;
 }
-
 .muffinButton {
 	background: transparent;
 	border: none;
@@ -239,15 +238,12 @@ body {
 	transition: transform 0.15s ease;
 	pointer-events: auto;
 }
-
 .muffinButton:hover {
 	transform: scale(1.05);
 }
-
 .muffinButton:active {
 	transform: scale(0.95);
 }
-
 .muffinIcon {
 	display: flex;
 	justify-content: center;
@@ -256,37 +252,32 @@ body {
 	height: 100px;
 	max-width: 100%;
 	border-radius: 9999px;
-	background-color: rgb(255, 214, 233);
+	background-color: var(--accent-bg);
 	font-size: 7.5rem;
 	box-shadow: 10px 10px 20px rgba(255, 244, 244, 0.555);
 }
-
 .muffinImg {
 	height: 300px;
 	filter: drop-shadow(10px 10px 20px rgba(255, 244, 244, 0));
 }
-
 .coinImg {
 	height: 100px;
 }
-
 .shopPage {
 	display: flex;
 	justify-content: center;
 	padding-top: 0;
 	align-items: flex-start;
 }
-
 .shopPanel {
 	margin-top: -105px;
 	width: 100%;
 	max-width: 520px;
-	background-color: rgb(247, 124, 191);
+	background-color: var(--panel-bg);
 	border-radius: 24px;
 	padding: 24px;
 	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
 }
-
 .shopPanel h2 {
 	margin: 0 0 20px;
 	text-align: center;
@@ -294,13 +285,11 @@ body {
 	color: white;
 	text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
-
 .shopItems {
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
 }
-
 .shopItem {
 	display: grid;
 	font-size: 1.1rem;
@@ -308,13 +297,12 @@ body {
 	align-items: center;
 	border: none;
 	border-radius: 16px;
-	background-color: rgb(255, 160, 200);
+	background-color: var(--button-bg);
 	padding: 12px 16px;
 	color: white;
 	cursor: pointer;
 	box-shadow: 0 8px 12px -6px rgba(0, 0, 0, 0.35);
 }
-
 .shopItemInfo,
 .shopItemPrice {
 	display: flex;
@@ -322,21 +310,17 @@ body {
 	gap: 10px;
 	font-weight: 700;
 }
-
 .shopItemInfo img {
 	width: 52px;
 	height: 52px;
 	object-fit: contain;
 }
-
 .shopItemPrice img {
 	width: 50px;
 	height: 50px;
 	object-fit: contain;
 }
-
 .shopItem:disabled {
 	cursor: not-allowed;
 	opacity: 0.6;
 }
-
