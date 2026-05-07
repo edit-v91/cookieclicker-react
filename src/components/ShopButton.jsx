@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import MoneyImg from "../assets/Cupcake-coin.png";
 import CartImg from "../assets/Shoppingcart.png";
+import DonutCoin from "../assets/Donut-coin.png";
+import DonutCart from "../assets/Donut-cart.png";
 
-export default function ShopButton({ money, onBuy }) {
+export default function ShopButton({ money, onBuy, hasDonutSkin }) {
 	const navigate = useNavigate();
 
 	return (
@@ -15,7 +17,11 @@ export default function ShopButton({ money, onBuy }) {
 				aria-label="Spend money to buy muffins">
 				<span className="moneyCount">{money}</span>
 				<div className="moneyIcon">
-					<img src={MoneyImg} alt="coin" className="coinImg" />
+					{hasDonutSkin ? (
+						<img src={DonutCoin} alt="coin" className="coinImg" />
+					) : (
+						<img src={MoneyImg} alt="coin" className="coinImg" />
+					)}
 				</div>
 			</button>
 			<button
@@ -24,7 +30,11 @@ export default function ShopButton({ money, onBuy }) {
 				onClick={() => navigate("/shop")}>
 				<span className="moneyCount">Shop</span>
 				<div className="moneyIcon">
-					<img src={CartImg} alt="cart" className="coinImg" />
+					{hasDonutSkin ? (
+						<img src={DonutCart} alt="cart" className="coinImg" />
+					) : (
+						<img src={CartImg} alt="cart" className="coinImg" />
+					)}
 				</div>
 			</button>
 		</div>

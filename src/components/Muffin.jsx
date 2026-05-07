@@ -1,8 +1,9 @@
 import React from "react";
 import MuffinImg from "../assets/Vanilla-cupcake.png";
 import MuffinUpgradeImg from "../assets/Muffin-upgrade.png";
+import DonutImg from "../assets/Donut.png";
 
-export default function Muffin({ onClick, counter }) {
+export default function Muffin({ onClick, counter, hasDonutSkin }) {
 	return (
 		<div className="muffinContainer">
 			<button
@@ -11,10 +12,12 @@ export default function Muffin({ onClick, counter }) {
 				className="muffinButton"
 				aria-label="Click the muffin">
 				<div className="muffinIcon">
-					{counter < 1000 ? (
-						<img src={MuffinImg} alt="muffin" className="muffinImg" />
+					{hasDonutSkin ? (
+						<img src={DonutImg} alt="donut" className="muffinImg" />
+					) : counter > 1000 && !hasDonutSkin ? (
+						<img src={MuffinUpgradeImg} alt="muffin upgrade" className="muffinImg" />
 					) : (
-						<img src={MuffinUpgradeImg} alt="muffin" className="muffinImg" />
+						<img src={MuffinImg} alt="muffin" className="muffinImg" />
 					)}
 				</div>
 			</button>

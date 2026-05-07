@@ -8,11 +8,15 @@ import CounterDisplay from "./components/CounterDisplay";
 import Header from "./components/Header";
 import Shop from "./components/Shop";
 
-function Home({ counter, countClick, multiplier }) {
+function Home({ counter, countClick, multiplier, hasDonutSkin }) {
 	return (
 		<>
-			<CounterDisplay counter={counter} multiplier={multiplier}/>
-			<Muffin onClick={countClick} counter={counter}/>
+			<CounterDisplay counter={counter} multiplier={multiplier} />
+			<Muffin
+				onClick={countClick}
+				counter={counter}
+				hasDonutSkin={hasDonutSkin}
+			/>
 		</>
 	);
 }
@@ -21,13 +25,20 @@ function App() {
 	const [counter, setCounter] = useState(0);
 	const [money, setMoney] = useState(0);
 	const [multiplier, setMultiplier] = useState(1);
+	const [hasDonutSkin, setHasDonutSkin] = useState(false);
 
 	const countClick = () => {
 		const nextCounter = counter + multiplier;
 		setCounter(nextCounter);
 
-		if (nextCounter % 3 === 0) {
-			setMoney((currentMoney) => currentMoney + 1);
+		if (hasDonutSkin) {
+			if (nextCounter % 2 === 0) {
+				setMoney((currentMoney) => currentMoney + 1);
+			}
+		} else {
+			if (nextCounter % 3 === 0) {
+				setMoney((currentMoney) => currentMoney + 1);
+			}
 		}
 	};
 
@@ -44,18 +55,39 @@ function App() {
 		setMultiplier(multiplier * value);
 	};
 
+	const buyDonutSkin = (cost) => {
+		if (money < cost || hasDonutSkin) return;
+
+		setMoney((m) => m - cost);
+		setHasDonutSkin(true);
+	};
+
 	return (
 		<BrowserRouter>
-			<Header counter={counter}/>
-			<ShopButton money={money} onBuy={buyMuffin} />
+			<Header counter={counter} hasDonutSkin={hasDonutSkin} />
+			<ShopButton money={money} onBuy={buyMuffin} hasDonutSkin={hasDonutSkin} />
 			<Routes>
 				<Route
 					path="/"
-					element={<Home counter={counter} countClick={countClick} multiplier={multiplier}/>}
+					element={
+						<Home
+							counter={counter}
+							countClick={countClick}
+							multiplier={multiplier}
+							hasDonutSkin={hasDonutSkin}
+						/>
+					}
 				/>
 				<Route
 					path="/shop"
-					element={<Shop money={money} buyMultiplier={buyMultiplier} />}
+					element={
+						<Shop
+							money={money}
+							buyMultiplier={buyMultiplier}
+							hasDonutSkin={hasDonutSkin}
+							buyDonutSkin={buyDonutSkin}
+						/>
+					}
 				/>
 			</Routes>
 		</BrowserRouter>
