@@ -12,7 +12,7 @@ import { SkinProvider, useSkin } from "./contexts/SkinContext";
 function Home({ counter, countClick, multiplier }) {
 	return (
 		<main className="homeLayout">
-			<InfoPanel />
+			<InfoPanel multiplier={multiplier} />
 			<div className="gameArea">
 				<CounterDisplay counter={counter} multiplier={multiplier} />
 				<Muffin onClick={countClick} counter={counter} />

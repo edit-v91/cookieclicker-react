@@ -163,7 +163,7 @@ body {
 .infoPanel {
 	grid-column: 1;
 	justify-self: start;
-	width: 100%;
+	width: 130%;
 	min-height: 360px;
 	background-color: var(--panel-bg);
 	opacity: 0.6;
@@ -171,7 +171,7 @@ body {
 	padding: 24px;
 	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
 	box-sizing: border-box;
-	margin-top: 50px
+	margin-top: 30px
 }
 
 .infoPanel h2 {
@@ -183,8 +183,20 @@ body {
 }
 
 .infoPanelContent {
-	min-height: 260px;
-	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: white;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.infoPanelContent p {
+	margin: 0;
+	padding: 10px 12px;
+	border-radius: 12px;
+	background-color: rgba(255, 255, 255, 0.08);
 }
 
 .shopContainer {
