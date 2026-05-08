@@ -1,4 +1,9 @@
+import { useSkin } from "../contexts/SkinContext";
+
 export default function CounterDisplay({ counter, multiplier }) {
+	const { activeSkinId } = useSkin();
+	const itemName = activeSkinId === "donut" ? "donut(s)" : "muffin(s)";
+
 	return (
 		<div className="container">
 			<div className="counterBox">
@@ -7,7 +12,7 @@ export default function CounterDisplay({ counter, multiplier }) {
 						? `Sugar rush x${multiplier}`
 						: "No booster active"}
 				</h3>
-				<h2>{counter} muffin(s)</h2>
+				<h2>{counter} {itemName}</h2>
 			</div>
 		</div>
 	);

@@ -5,16 +5,22 @@ import Muffin from "./components/Muffin";
 import ShopButton from "./components/ShopButton";
 import CounterDisplay from "./components/CounterDisplay";
 import Header from "./components/Header";
+import InfoPanel from "./components/InfoPanel";
 import Shop from "./components/Shop";
 import { SkinProvider, useSkin } from "./contexts/SkinContext";
+
 function Home({ counter, countClick, multiplier }) {
 	return (
-		<>
-			<CounterDisplay counter={counter} multiplier={multiplier} />
-			<Muffin onClick={countClick} counter={counter} />
-		</>
+		<main className="homeLayout">
+			<InfoPanel />
+			<div className="gameArea">
+				<CounterDisplay counter={counter} multiplier={multiplier} />
+				<Muffin onClick={countClick} counter={counter} />
+			</div>
+		</main>
 	);
 }
+
 function AppInner() {
 	const [counter, setCounter] = useState(0);
 	const [money, setMoney] = useState(0);
