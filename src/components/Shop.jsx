@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useSkin } from "../contexts/SkinContext";
+
 const shopItems = [
 	{
 		name: "2x clicks",
@@ -22,12 +23,16 @@ const shopItems = [
 		type: "skin",
 	},
 ];
+
 export default function Shop({ money, setMoney, buyMultiplier, counter }) {
 	const navigate = useNavigate();
+
 	const { skins, getDisplaySkin, ownedSkins, buySkin } = useSkin();
 	const displaySkin = getDisplaySkin(counter);
+
 	const buyShopItem = (item) => {
 		if (money < item.price) return;
+
 		if (item.type === "skin") {
 			if (ownedSkins.includes(item.skinId)) return;
 			setMoney((m) => m - item.price);
@@ -36,6 +41,7 @@ export default function Shop({ money, setMoney, buyMultiplier, counter }) {
 		}
 		buyMultiplier(item.value, item.price);
 	};
+
 	return (
 		<main className="shopPage">
 			<section className="shopPanel">
@@ -53,8 +59,7 @@ export default function Shop({ money, setMoney, buyMultiplier, counter }) {
 								className="shopItem"
 								key={item.name}
 								onClick={() => buyShopItem(item)}
-								disabled={money < item.price || isOwnedSkin}
-							>
+								disabled={money < item.price || isOwnedSkin}>
 								<div className="shopItemInfo">
 									<img src={icon} alt={item.name} />
 									<span>{isOwnedSkin ? `${item.name} owned` : item.name}</span>

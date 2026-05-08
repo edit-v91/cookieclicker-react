@@ -25,12 +25,15 @@ function AppInner() {
 	const [counter, setCounter] = useState(0);
 	const [money, setMoney] = useState(0);
 	const [multiplier, setMultiplier] = useState(1);
+
 	const { getDisplaySkin, activeSkinId } = useSkin();
 	const displaySkin = getDisplaySkin(counter);
+
 	const countClick = () => {
 		const nextCounter = counter + multiplier;
 		setCounter(nextCounter);
 		const moneyEvery = activeSkinId === "donut" ? 2 : 3;
+		
 		if (nextCounter % moneyEvery === 0) {
 			setMoney((currentMoney) => currentMoney + 1);
 		}
